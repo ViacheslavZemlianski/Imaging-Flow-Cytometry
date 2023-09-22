@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AssayTemplate date="9/6/2023 3:56:11 PM" IDEAS_version="6.2.187.0">
+  <SampleName />
+  <ShowSampleName>False</ShowSampleName>
+  <ChannelPresets>
+    <gallery viewmode="BF+PI" orderByFeature="Object Number" ascendingOrder="true" population="All" showMasks="true" showColor="true" showSaturationColor="false" />
+  </ChannelPresets>
+  <ImageDisplaySettings>
+    <Width auto="false" value="75" />
+    <Height value="-1" />
+  </ImageDisplaySettings>
+  <Images>
+    <image name="Ch01" color="White" physicalChannel="0" xmin="450" xmax="1000" xmid="725" ymid="127" scalemin="445" scalemax="1005" tokens="" baseimage="" function="" />
+    <image name="Ch02" color="Lime" physicalChannel="1" xmin="0" xmax="4095" xmid="2047" ymid="127" scalemin="0" scalemax="1023" tokens="" baseimage="" function="" />
+    <image name="Ch03" color="Yellow" physicalChannel="2" xmin="0" xmax="4095" xmid="2047" ymid="127" scalemin="0" scalemax="1023" tokens="" baseimage="" function="" />
+    <image name="Ch04" color="DarkOrange" physicalChannel="3" xmin="0" xmax="1588" xmid="778" ymid="127" scalemin="0" scalemax="4100" tokens="" baseimage="" function="" />
+    <image name="Ch05" color="Red" physicalChannel="4" xmin="0" xmax="4095" xmid="2047" ymid="127" scalemin="0" scalemax="1023" tokens="" baseimage="" function="" />
+    <image name="Ch06" color="DeepPink" physicalChannel="5" xmin="0" xmax="4095" xmid="2047" ymid="127" scalemin="0" scalemax="1023" tokens="" baseimage="" function="" />
+    <image name="Ch07" color="DarkOrchid" physicalChannel="6" xmin="0" xmax="4095" xmid="2047" ymid="127" scalemin="0" scalemax="1023" tokens="" baseimage="" function="" />
+    <image name="Ch08" color="Lime" physicalChannel="7" xmin="0" xmax="4095" xmid="2047" ymid="127" scalemin="0" scalemax="1023" tokens="" baseimage="" function="" />
+    <image name="Ch09" color="White" physicalChannel="8" xmin="450" xmax="1000" xmid="725" ymid="127" scalemin="0" scalemax="1023" tokens="" baseimage="" function="" />
+    <image name="Ch10" color="DarkOrange" physicalChannel="9" xmin="0" xmax="4095" xmid="2047" ymid="127" scalemin="0" scalemax="1023" tokens="" baseimage="" function="" />
+    <image name="Ch11" color="Red" physicalChannel="10" xmin="0" xmax="4095" xmid="2047" ymid="127" scalemin="0" scalemax="1023" tokens="" baseimage="" function="" />
+    <image name="Ch12" color="DeepPink" physicalChannel="11" xmin="0" xmax="4095" xmid="2047" ymid="127" scalemin="0" scalemax="1023" tokens="" baseimage="" function="" />
+  </Images>
+  <Composites>
+    <composite name="Ch01/Ch04" def="Ch01|25|Ch04|100" />
+    <composite name="Ch04/Ch07" def="Ch04|100|Ch07|100" />
+  </Composites>
+  <masks>
+    <mask type="C" name="MC" def="M01|Or|M02|Or|M03|Or|M04|Or|M05|Or|M06|Or|M07|Or|M08|Or|M09|Or|M10|Or|M11|Or|M12" />
+    <mask type="C" name="None" def="Threshold|M01|Ch01|0" />
+    <mask type="C" name="NMC" def="Not|MC" />
+    <mask type="C" name="Nucleus_0" def="Threshold|M04|Ch04|90" />
+    <mask type="C" name="Nucleus" def="Dilate|Erode|Watershed|Nucleus_0|Ch04|0|0|5|1|1|1" />
+    <mask type="C" name="Cell" def="Dilate|Erode|AdaptiveErode|M01|Ch01|90|4|3" />
+  </masks>
+  <ViewingModes>
+    <viewingmode name="All Channels">
+      <viewingmodecolumn image="Ch01" mask="M01" />
+      <viewingmodecolumn image="Ch02" mask="M02" />
+      <viewingmodecolumn image="Ch03" mask="M03" />
+      <viewingmodecolumn image="Ch04" mask="M04" />
+      <viewingmodecolumn image="Ch05" mask="M05" />
+      <viewingmodecolumn image="Ch06" mask="M06" />
+      <viewingmodecolumn image="Ch07" mask="M07" />
+      <viewingmodecolumn image="Ch08" mask="M08" />
+      <viewingmodecolumn image="Ch09" mask="M09" />
+      <viewingmodecolumn image="Ch10" mask="M10" />
+      <viewingmodecolumn image="Ch11" mask="M11" />
+      <viewingmodecolumn image="Ch12" mask="M12" />
+    </viewingmode>
+    <viewingmode name="Ch01">
+      <viewingmodecolumn image="Ch01" mask="M01" />
+    </viewingmode>
+    <viewingmode name="Ch02">
+      <viewingmodecolumn image="Ch02" mask="M02" />
+    </viewingmode>
+    <viewingmode name="Ch03">
+      <viewingmodecolumn image="Ch03" mask="M03" />
+    </viewingmode>
+    <viewingmode name="Ch04">
+      <viewingmodecolumn image="Ch04" mask="M04" />
+    </viewingmode>
+    <viewingmode name="Ch05">
+      <viewingmodecolumn image="Ch05" mask="M05" />
+    </viewingmode>
+    <viewingmode name="Ch06">
+      <viewingmodecolumn image="Ch06" mask="M06" />
+    </viewingmode>
+    <viewingmode name="Ch07">
+      <viewingmodecolumn image="Ch07" mask="M07" />
+    </viewingmode>
+    <viewingmode name="Ch08">
+      <viewingmodecolumn image="Ch08" mask="M08" />
+    </viewingmode>
+    <viewingmode name="Ch09">
+      <viewingmodecolumn image="Ch09" mask="M09" />
+    </viewingmode>
+    <viewingmode name="Ch10">
+      <viewingmodecolumn image="Ch10" mask="M10" />
+    </viewingmode>
+    <viewingmode name="Ch11">
+      <viewingmodecolumn image="Ch11" mask="M11" />
+    </viewingmode>
+    <viewingmode name="Ch12">
+      <viewingmodecolumn image="Ch12" mask="M12" />
+    </viewingmode>
+    <viewingmode name="BF+PI">
+      <viewingmodecolumn image="Ch01" mask="Cell" feature="Delta Centroid XY_Cell_Nucleus" />
+      <viewingmodecolumn composite="Ch01/Ch04" />
+      <viewingmodecolumn image="Ch04" mask="Nucleus" />
+    </viewingmode>
+    <viewingmode name="Ch01/Ch04">
+      <viewingmodecolumn composite="Ch01/Ch04" />
+    </viewingmode>
+    <viewingmode name="BF+PI+CW">
+      <viewingmodecolumn image="Ch01" mask="Cell" />
+      <viewingmodecolumn image="Ch04" mask="Nucleus" />
+      <viewingmodecolumn image="Ch07" mask="M07" />
+      <viewingmodecolumn composite="Ch04/Ch07" />
+    </viewingmode>
+    <viewingmode name="Ch04/Ch07">
+      <viewingmodecolumn composite="Ch04/Ch07" />
+    </viewingmode>
+  </ViewingModes>
+  <DefinedFeatures>
+    <UDF name="Area_Cell" type="single" userfeaturetype="Mask Only" def="Area|Cell" />
+    <UDF name="Area_M02" type="single" userfeaturetype="Mask Only" def="Area|M02" />
+    <UDF name="Area_M03" type="single" userfeaturetype="Mask Only" def="Area|M03" />
+    <UDF name="Area_M04" type="single" userfeaturetype="Mask Only" def="Area|M04" />
+    <UDF name="Area_M05" type="single" userfeaturetype="Mask Only" def="Area|M05" />
+    <UDF name="Area_M06" type="single" userfeaturetype="Mask Only" def="Area|M06" />
+    <UDF name="Area_M07" type="single" userfeaturetype="Mask Only" def="Area|M07" />
+    <UDF name="Area_M08" type="single" userfeaturetype="Mask Only" def="Area|M08" />
+    <UDF name="Area_M09" type="single" userfeaturetype="Mask Only" def="Area|M09" />
+    <UDF name="Area_M10" type="single" userfeaturetype="Mask Only" def="Area|M10" />
+    <UDF name="Area_M11" type="single" userfeaturetype="Mask Only" def="Area|M11" />
+    <UDF name="Area_M12" type="single" userfeaturetype="Mask Only" def="Area|M12" />
+    <UDF name="Area_MC" type="single" userfeaturetype="Mask Only" def="Area|MC" />
+    <UDF name="Aspect Ratio_Cell" type="single" userfeaturetype="Mask Only" def="Aspect Ratio|Cell" />
+    <UDF name="Aspect Ratio_M02" type="single" userfeaturetype="Mask Only" def="Aspect Ratio|M02" />
+    <UDF name="Aspect Ratio_M03" type="single" userfeaturetype="Mask Only" def="Aspect Ratio|M03" />
+    <UDF name="Aspect Ratio_M04" type="single" userfeaturetype="Mask Only" def="Aspect Ratio|M04" />
+    <UDF name="Aspect Ratio_M05" type="single" userfeaturetype="Mask Only" def="Aspect Ratio|M05" />
+    <UDF name="Aspect Ratio_M06" type="single" userfeaturetype="Mask Only" def="Aspect Ratio|M06" />
+    <UDF name="Aspect Ratio_M07" type="single" userfeaturetype="Mask Only" def="Aspect Ratio|M07" />
+    <UDF name="Aspect Ratio_M08" type="single" userfeaturetype="Mask Only" def="Aspect Ratio|M08" />
+    <UDF name="Aspect Ratio_M09" type="single" userfeaturetype="Mask Only" def="Aspect Ratio|M09" />
+    <UDF name="Aspect Ratio_M10" type="single" userfeaturetype="Mask Only" def="Aspect Ratio|M10" />
+    <UDF name="Aspect Ratio_M11" type="single" userfeaturetype="Mask Only" def="Aspect Ratio|M11" />
+    <UDF name="Aspect Ratio_M12" type="single" userfeaturetype="Mask Only" def="Aspect Ratio|M12" />
+    <UDF name="Aspect Ratio Intensity_M01_Ch01" type="single" userfeaturetype="Mask and Image" def="Aspect Ratio Intensity|M01|Ch01" />
+    <UDF name="Aspect Ratio Intensity_M02_Ch02" type="single" userfeaturetype="Mask and Image" def="Aspect Ratio Intensity|M02|Ch02" />
+    <UDF name="Aspect Ratio Intensity_M03_Ch03" type="single" userfeaturetype="Mask and Image" def="Aspect Ratio Intensity|M03|Ch03" />
+    <UDF name="Aspect Ratio Intensity_M04_Ch04" type="single" userfeaturetype="Mask and Image" def="Aspect Ratio Intensity|M04|Ch04" />
+    <UDF name="Aspect Ratio Intensity_M05_Ch05" type="single" userfeaturetype="Mask and Image" def="Aspect Ratio Intensity|M05|Ch05" />
+    <UDF name="Aspect Ratio Intensity_M06_Ch06" type="single" userfeaturetype="Mask and Image" def="Aspect Ratio Intensity|M06|Ch06" />
+    <UDF name="Aspect Ratio Intensity_M07_Ch07" type="single" userfeaturetype="Mask and Image" def="Aspect Ratio Intensity|M07|Ch07" />
+    <UDF name="Aspect Ratio Intensity_M08_Ch08" type="single" userfeaturetype="Mask and Image" def="Aspect Ratio Intensity|M08|Ch08" />
+    <UDF name="Aspect Ratio Intensity_M09_Ch09" type="single" userfeaturetype="Mask and Image" def="Aspect Ratio Intensity|M09|Ch09" />
+    <UDF name="Aspect Ratio Intensity_M10_Ch10" type="single" userfeaturetype="Mask and Image" def="Aspect Ratio Intensity|M10|Ch10" />
+    <UDF name="Aspect Ratio Intensity_M11_Ch11" type="single" userfeaturetype="Mask and Image" def="Aspect Ratio Intensity|M11|Ch11" />
+    <UDF name="Aspect Ratio Intensity_M12_Ch12" type="single" userfeaturetype="Mask and Image" def="Aspect Ratio Intensity|M12|Ch12" />
+    <UDF name="Bkgd Mean_Ch01" type="single" userfeaturetype="Image Only" def="Bkgd Mean|Ch01" />
+    <UDF name="Bkgd Mean_Ch02" type="single" userfeaturetype="Image Only" def="Bkgd Mean|Ch02" />
+    <UDF name="Bkgd Mean_Ch03" type="single" userfeaturetype="Image Only" def="Bkgd Mean|Ch03" />
+    <UDF name="Bkgd Mean_Ch04" type="single" userfeaturetype="Image Only" def="Bkgd Mean|Ch04" />
+    <UDF name="Bkgd Mean_Ch05" type="single" userfeaturetype="Image Only" def="Bkgd Mean|Ch05" />
+    <UDF name="Bkgd Mean_Ch06" type="single" userfeaturetype="Image Only" def="Bkgd Mean|Ch06" />
+    <UDF name="Bkgd Mean_Ch07" type="single" userfeaturetype="Image Only" def="Bkgd Mean|Ch07" />
+    <UDF name="Bkgd Mean_Ch08" type="single" userfeaturetype="Image Only" def="Bkgd Mean|Ch08" />
+    <UDF name="Bkgd Mean_Ch09" type="single" userfeaturetype="Image Only" def="Bkgd Mean|Ch09" />
+    <UDF name="Bkgd Mean_Ch10" type="single" userfeaturetype="Image Only" def="Bkgd Mean|Ch10" />
+    <UDF name="Bkgd Mean_Ch11" type="single" userfeaturetype="Image Only" def="Bkgd Mean|Ch11" />
+    <UDF name="Bkgd Mean_Ch12" type="single" userfeaturetype="Image Only" def="Bkgd Mean|Ch12" />
+    <UDF name="Modulation_M01_Ch01" type="single" userfeaturetype="Mask and Image" def="Modulation|M01|Ch01" />
+    <UDF name="Modulation_M02_Ch02" type="single" userfeaturetype="Mask and Image" def="Modulation|M02|Ch02" />
+    <UDF name="Modulation_M03_Ch03" type="single" userfeaturetype="Mask and Image" def="Modulation|M03|Ch03" />
+    <UDF name="Modulation_M04_Ch04" type="single" userfeaturetype="Mask and Image" def="Modulation|M04|Ch04" />
+    <UDF name="Modulation_M05_Ch05" type="single" userfeaturetype="Mask and Image" def="Modulation|M05|Ch05" />
+    <UDF name="Modulation_M06_Ch06" type="single" userfeaturetype="Mask and Image" def="Modulation|M06|Ch06" />
+    <UDF name="Modulation_M07_Ch07" type="single" userfeaturetype="Mask and Image" def="Modulation|M07|Ch07" />
+    <UDF name="Modulation_M08_Ch08" type="single" userfeaturetype="Mask and Image" def="Modulation|M08|Ch08" />
+    <UDF name="Modulation_M09_Ch09" type="single" userfeaturetype="Mask and Image" def="Modulation|M09|Ch09" />
+    <UDF name="Modulation_M10_Ch10" type="single" userfeaturetype="Mask and Image" def="Modulation|M10|Ch10" />
+    <UDF name="Modulation_M11_Ch11" type="single" userfeaturetype="Mask and Image" def="Modulation|M11|Ch11" />
+    <UDF name="Modulation_M12_Ch12" type="single" userfeaturetype="Mask and Image" def="Modulation|M12|Ch12" />
+    <UDF name="Contrast_M01_Ch01" type="single" userfeaturetype="Mask and Image" def="Contrast|M01|Ch01" />
+    <UDF name="Contrast_M02_Ch02" type="single" userfeaturetype="Mask and Image" def="Contrast|M02|Ch02" />
+    <UDF name="Contrast_M03_Ch03" type="single" userfeaturetype="Mask and Image" def="Contrast|M03|Ch03" />
+    <UDF name="Contrast_M04_Ch04" type="single" userfeaturetype="Mask and Image" def="Contrast|M04|Ch04" />
+    <UDF name="Contrast_M05_Ch05" type="single" userfeaturetype="Mask and Image" def="Contrast|M05|Ch05" />
+    <UDF name="Contrast_M06_Ch06" type="single" userfeaturetype="Mask and Image" def="Contrast|M06|Ch06" />
+    <UDF name="Contrast_M07_Ch07" type="single" userfeaturetype="Mask and Image" def="Contrast|M07|Ch07" />
+    <UDF name="Contrast_M08_Ch08" type="single" userfeaturetype="Mask and Image" def="Contrast|M08|Ch08" />
+    <UDF name="Contrast_M09_Ch09" type="single" userfeaturetype="Mask and Image" def="Contrast|M09|Ch09" />
+    <UDF name="Contrast_M10_Ch10" type="single" userfeaturetype="Mask and Image" def="Contrast|M10|Ch10" />
+    <UDF name="Contrast_M11_Ch11" type="single" userfeaturetype="Mask and Image" def="Contrast|M11|Ch11" />
+    <UDF name="Contrast_M12_Ch12" type="single" userfeaturetype="Mask and Image" def="Contrast|M12|Ch12" />
+    <UDF name="Gradient RMS_M01_Ch01" type="single" userfeaturetype="Mask and Image" def="Gradient RMS|M01|Ch01" />
+    <UDF name="Gradient RMS_M02_Ch02" type="single" userfeaturetype="Mask and Image" def="Gradient RMS|M02|Ch02" />
+    <UDF name="Gradient RMS_M03_Ch03" type="single" userfeaturetype="Mask and Image" def="Gradient RMS|M03|Ch03" />
+    <UDF name="Gradient RMS_M04_Ch04" type="single" userfeaturetype="Mask and Image" def="Gradient RMS|M04|Ch04" />
+    <UDF name="Gradient RMS_M05_Ch05" type="single" userfeaturetype="Mask and Image" def="Gradient RMS|M05|Ch05" />
+    <UDF name="Gradient RMS_M06_Ch06" type="single" userfeaturetype="Mask and Image" def="Gradient RMS|M06|Ch06" />
+    <UDF name="Gradient RMS_M07_Ch07" type="single" userfeaturetype="Mask and Image" def="Gradient RMS|M07|Ch07" />
+    <UDF name="Gradient RMS_M08_Ch08" type="single" userfeaturetype="Mask and Image" def="Gradient RMS|M08|Ch08" />
+    <UDF name="Gradient RMS_M09_Ch09" type="single" userfeaturetype="Mask and Image" def="Gradient RMS|M09|Ch09" />
+    <UDF name="Gradient RMS_M10_Ch10" type="single" userfeaturetype="Mask and Image" def="Gradient RMS|M10|Ch10" />
+    <UDF name="Gradient RMS_M11_Ch11" type="single" userfeaturetype="Mask and Image" def="Gradient RMS|M11|Ch11" />
+    <UDF name="Gradient RMS_M12_Ch12" type="single" userfeaturetype="Mask and Image" def="Gradient RMS|M12|Ch12" />
+    <UDF name="Intensity_MC_Ch01" type="single" userfeaturetype="Mask and Image" def="Intensity|MC|Ch01" />
+    <UDF name="Intensity_MC_Ch02" type="single" userfeaturetype="Mask and Image" def="Intensity|MC|Ch02" />
+    <UDF name="Intensity_MC_Ch03" type="single" userfeaturetype="Mask and Image" def="Intensity|MC|Ch03" />
+    <UDF name="Intensity_MC_Ch04" type="single" userfeaturetype="Mask and Image" def="Intensity|MC|Ch04" />
+    <UDF name="Intensity_MC_Ch05" type="single" userfeaturetype="Mask and Image" def="Intensity|MC|Ch05" />
+    <UDF name="Intensity_MC_Ch06" type="single" userfeaturetype="Mask and Image" def="Intensity|MC|Ch06" />
+    <UDF name="Intensity_MC_Ch07" type="single" userfeaturetype="Mask and Image" def="Intensity|MC|Ch07" />
+    <UDF name="Intensity_MC_Ch08" type="single" userfeaturetype="Mask and Image" def="Intensity|MC|Ch08" />
+    <UDF name="Intensity_MC_Ch09" type="single" userfeaturetype="Mask and Image" def="Intensity|MC|Ch09" />
+    <UDF name="Intensity_MC_Ch10" type="single" userfeaturetype="Mask and Image" def="Intensity|MC|Ch10" />
+    <UDF name="Intensity_MC_Ch11" type="single" userfeaturetype="Mask and Image" def="Intensity|MC|Ch11" />
+    <UDF name="Intensity_MC_Ch12" type="single" userfeaturetype="Mask and Image" def="Intensity|MC|Ch12" />
+    <UDF name="Mean Pixel_M01_Ch01" type="single" userfeaturetype="Mask and Image" def="Mean Pixel|M01|Ch01" />
+    <UDF name="Mean Pixel_M02_Ch02" type="single" userfeaturetype="Mask and Image" def="Mean Pixel|M02|Ch02" />
+    <UDF name="Mean Pixel_M03_Ch03" type="single" userfeaturetype="Mask and Image" def="Mean Pixel|M03|Ch03" />
+    <UDF name="Mean Pixel_M04_Ch04" type="single" userfeaturetype="Mask and Image" def="Mean Pixel|M04|Ch04" />
+    <UDF name="Mean Pixel_M05_Ch05" type="single" userfeaturetype="Mask and Image" def="Mean Pixel|M05|Ch05" />
+    <UDF name="Mean Pixel_M06_Ch06" type="single" userfeaturetype="Mask and Image" def="Mean Pixel|M06|Ch06" />
+    <UDF name="Mean Pixel_M07_Ch07" type="single" userfeaturetype="Mask and Image" def="Mean Pixel|M07|Ch07" />
+    <UDF name="Mean Pixel_M08_Ch08" type="single" userfeaturetype="Mask and Image" def="Mean Pixel|M08|Ch08" />
+    <UDF name="Mean Pixel_M09_Ch09" type="single" userfeaturetype="Mask and Image" def="Mean Pixel|M09|Ch09" />
+    <UDF name="Mean Pixel_M10_Ch10" type="single" userfeaturetype="Mask and Image" def="Mean Pixel|M10|Ch10" />
+    <UDF name="Mean Pixel_M11_Ch11" type="single" userfeaturetype="Mask and Image" def="Mean Pixel|M11|Ch11" />
+    <UDF name="Mean Pixel_M12_Ch12" type="single" userfeaturetype="Mask and Image" def="Mean Pixel|M12|Ch12" />
+    <UDF name="Median Pixel_M01_Ch01" type="single" userfeaturetype="Mask and Image" def="Median Pixel|M01|Ch01" />
+    <UDF name="Median Pixel_M02_Ch02" type="single" userfeaturetype="Mask and Image" def="Median Pixel|M02|Ch02" />
+    <UDF name="Median Pixel_M03_Ch03" type="single" userfeaturetype="Mask and Image" def="Median Pixel|M03|Ch03" />
+    <UDF name="Median Pixel_M04_Ch04" type="single" userfeaturetype="Mask and Image" def="Median Pixel|M04|Ch04" />
+    <UDF name="Median Pixel_M05_Ch05" type="single" userfeaturetype="Mask and Image" def="Median Pixel|M05|Ch05" />
+    <UDF name="Median Pixel_M06_Ch06" type="single" userfeaturetype="Mask and Image" def="Median Pixel|M06|Ch06" />
+    <UDF name="Median Pixel_M07_Ch07" type="single" userfeaturetype="Mask and Image" def="Median Pixel|M07|Ch07" />
+    <UDF name="Median Pixel_M08_Ch08" type="single" userfeaturetype="Mask and Image" def="Median Pixel|M08|Ch08" />
+    <UDF name="Median Pixel_M09_Ch09" type="single" userfeaturetype="Mask and Image" def="Median Pixel|M09|Ch09" />
+    <UDF name="Median Pixel_M10_Ch10" type="single" userfeaturetype="Mask and Image" def="Median Pixel|M10|Ch10" />
+    <UDF name="Median Pixel_M11_Ch11" type="single" userfeaturetype="Mask and Image" def="Median Pixel|M11|Ch11" />
+    <UDF name="Median Pixel_M12_Ch12" type="single" userfeaturetype="Mask and Image" def="Median Pixel|M12|Ch12" />
+    <UDF name="Max Pixel_MC_Ch01" type="single" userfeaturetype="Mask and Image" def="Max Pixel|MC|Ch01" />
+    <UDF name="Max Pixel_MC_Ch02" type="single" userfeaturetype="Mask and Image" def="Max Pixel|MC|Ch02" />
+    <UDF name="Max Pixel_MC_Ch03" type="single" userfeaturetype="Mask and Image" def="Max Pixel|MC|Ch03" />
+    <UDF name="Max Pixel_MC_Ch04" type="single" userfeaturetype="Mask and Image" def="Max Pixel|MC|Ch04" />
+    <UDF name="Max Pixel_MC_Ch05" type="single" userfeaturetype="Mask and Image" def="Max Pixel|MC|Ch05" />
+    <UDF name="Max Pixel_MC_Ch06" type="single" userfeaturetype="Mask and Image" def="Max Pixel|MC|Ch06" />
+    <UDF name="Max Pixel_MC_Ch07" type="single" userfeaturetype="Mask and Image" def="Max Pixel|MC|Ch07" />
+    <UDF name="Max Pixel_MC_Ch08" type="single" userfeaturetype="Mask and Image" def="Max Pixel|MC|Ch08" />
+    <UDF name="Max Pixel_MC_Ch09" type="single" userfeaturetype="Mask and Image" def="Max Pixel|MC|Ch09" />
+    <UDF name="Max Pixel_MC_Ch10" type="single" userfeaturetype="Mask and Image" def="Max Pixel|MC|Ch10" />
+    <UDF name="Max Pixel_MC_Ch11" type="single" userfeaturetype="Mask and Image" def="Max Pixel|MC|Ch11" />
+    <UDF name="Max Pixel_MC_Ch12" type="single" userfeaturetype="Mask and Image" def="Max Pixel|MC|Ch12" />
+    <UDF name="Raw Max Pixel_MC_Ch01" type="single" userfeaturetype="Mask and Image" def="Raw Max Pixel|MC|Ch01" />
+    <UDF name="Raw Max Pixel_MC_Ch02" type="single" userfeaturetype="Mask and Image" def="Raw Max Pixel|MC|Ch02" />
+    <UDF name="Raw Max Pixel_MC_Ch03" type="single" userfeaturetype="Mask and Image" def="Raw Max Pixel|MC|Ch03" />
+    <UDF name="Raw Max Pixel_MC_Ch04" type="single" userfeaturetype="Mask and Image" def="Raw Max Pixel|MC|Ch04" />
+    <UDF name="Raw Max Pixel_MC_Ch05" type="single" userfeaturetype="Mask and Image" def="Raw Max Pixel|MC|Ch05" />
+    <UDF name="Raw Max Pixel_MC_Ch06" type="single" userfeaturetype="Mask and Image" def="Raw Max Pixel|MC|Ch06" />
+    <UDF name="Raw Max Pixel_MC_Ch07" type="single" userfeaturetype="Mask and Image" def="Raw Max Pixel|MC|Ch07" />
+    <UDF name="Raw Max Pixel_MC_Ch08" type="single" userfeaturetype="Mask and Image" def="Raw Max Pixel|MC|Ch08" />
+    <UDF name="Raw Max Pixel_MC_Ch09" type="single" userfeaturetype="Mask and Image" def="Raw Max Pixel|MC|Ch09" />
+    <UDF name="Raw Max Pixel_MC_Ch10" type="single" userfeaturetype="Mask and Image" def="Raw Max Pixel|MC|Ch10" />
+    <UDF name="Raw Max Pixel_MC_Ch11" type="single" userfeaturetype="Mask and Image" def="Raw Max Pixel|MC|Ch11" />
+    <UDF name="Raw Max Pixel_MC_Ch12" type="single" userfeaturetype="Mask and Image" def="Raw Max Pixel|MC|Ch12" />
+    <UDF name="Raw Min Pixel_MC_Ch01" type="single" userfeaturetype="Mask and Image" def="Raw Min Pixel|MC|Ch01" />
+    <UDF name="Raw Min Pixel_MC_Ch02" type="single" userfeaturetype="Mask and Image" def="Raw Min Pixel|MC|Ch02" />
+    <UDF name="Raw Min Pixel_MC_Ch03" type="single" userfeaturetype="Mask and Image" def="Raw Min Pixel|MC|Ch03" />
+    <UDF name="Raw Min Pixel_MC_Ch04" type="single" userfeaturetype="Mask and Image" def="Raw Min Pixel|MC|Ch04" />
+    <UDF name="Raw Min Pixel_MC_Ch05" type="single" userfeaturetype="Mask and Image" def="Raw Min Pixel|MC|Ch05" />
+    <UDF name="Raw Min Pixel_MC_Ch06" type="single" userfeaturetype="Mask and Image" def="Raw Min Pixel|MC|Ch06" />
+    <UDF name="Raw Min Pixel_MC_Ch07" type="single" userfeaturetype="Mask and Image" def="Raw Min Pixel|MC|Ch07" />
+    <UDF name="Raw Min Pixel_MC_Ch08" type="single" userfeaturetype="Mask and Image" def="Raw Min Pixel|MC|Ch08" />
+    <UDF name="Raw Min Pixel_MC_Ch09" type="single" userfeaturetype="Mask and Image" def="Raw Min Pixel|MC|Ch09" />
+    <UDF name="Raw Min Pixel_MC_Ch10" type="single" userfeaturetype="Mask and Image" def="Raw Min Pixel|MC|Ch10" />
+    <UDF name="Raw Min Pixel_MC_Ch11" type="single" userfeaturetype="Mask and Image" def="Raw Min Pixel|MC|Ch11" />
+    <UDF name="Raw Min Pixel_MC_Ch12" type="single" userfeaturetype="Mask and Image" def="Raw Min Pixel|MC|Ch12" />
+    <UDF name="Length_M01" type="single" userfeaturetype="Mask Only" def="Length|M01" />
+    <UDF name="Length_M02" type="single" userfeaturetype="Mask Only" def="Length|M02" />
+    <UDF name="Length_M03" type="single" userfeaturetype="Mask Only" def="Length|M03" />
+    <UDF name="Length_M04" type="single" userfeaturetype="Mask Only" def="Length|M04" />
+    <UDF name="Length_M05" type="single" userfeaturetype="Mask Only" def="Length|M05" />
+    <UDF name="Length_M06" type="single" userfeaturetype="Mask Only" def="Length|M06" />
+    <UDF name="Length_M07" type="single" userfeaturetype="Mask Only" def="Length|M07" />
+    <UDF name="Length_M08" type="single" userfeaturetype="Mask Only" def="Length|M08" />
+    <UDF name="Length_M09" type="single" userfeaturetype="Mask Only" def="Length|M09" />
+    <UDF name="Length_M10" type="single" userfeaturetype="Mask Only" def="Length|M10" />
+    <UDF name="Length_M11" type="single" userfeaturetype="Mask Only" def="Length|M11" />
+    <UDF name="Length_M12" type="single" userfeaturetype="Mask Only" def="Length|M12" />
+    <UDF name="Width_M01" type="single" userfeaturetype="Mask Only" def="Width|M01" />
+    <UDF name="Width_M02" type="single" userfeaturetype="Mask Only" def="Width|M02" />
+    <UDF name="Width_M03" type="single" userfeaturetype="Mask Only" def="Width|M03" />
+    <UDF name="Width_M04" type="single" userfeaturetype="Mask Only" def="Width|M04" />
+    <UDF name="Width_M05" type="single" userfeaturetype="Mask Only" def="Width|M05" />
+    <UDF name="Width_M06" type="single" userfeaturetype="Mask Only" def="Width|M06" />
+    <UDF name="Width_M07" type="single" userfeaturetype="Mask Only" def="Width|M07" />
+    <UDF name="Width_M08" type="single" userfeaturetype="Mask Only" def="Width|M08" />
+    <UDF name="Width_M09" type="single" userfeaturetype="Mask Only" def="Width|M09" />
+    <UDF name="Width_M10" type="single" userfeaturetype="Mask Only" def="Width|M10" />
+    <UDF name="Width_M11" type="single" userfeaturetype="Mask Only" def="Width|M11" />
+    <UDF name="Width_M12" type="single" userfeaturetype="Mask Only" def="Width|M12" />
+    <UDF name="Height_M01" type="single" userfeaturetype="Mask Only" def="Height|M01" />
+    <UDF name="Height_M02" type="single" userfeaturetype="Mask Only" def="Height|M02" />
+    <UDF name="Height_M03" type="single" userfeaturetype="Mask Only" def="Height|M03" />
+    <UDF name="Height_M04" type="single" userfeaturetype="Mask Only" def="Height|M04" />
+    <UDF name="Height_M05" type="single" userfeaturetype="Mask Only" def="Height|M05" />
+    <UDF name="Height_M06" type="single" userfeaturetype="Mask Only" def="Height|M06" />
+    <UDF name="Height_M07" type="single" userfeaturetype="Mask Only" def="Height|M07" />
+    <UDF name="Height_M08" type="single" userfeaturetype="Mask Only" def="Height|M08" />
+    <UDF name="Height_M09" type="single" userfeaturetype="Mask Only" def="Height|M09" />
+    <UDF name="Height_M10" type="single" userfeaturetype="Mask Only" def="Height|M10" />
+    <UDF name="Height_M11" type="single" userfeaturetype="Mask Only" def="Height|M11" />
+    <UDF name="Height_M12" type="single" userfeaturetype="Mask Only" def="Height|M12" />
+    <UDF name="Saturation Count_M01_Ch01" type="single" userfeaturetype="Mask and Image" def="Saturation Count|M01|Ch01" />
+    <UDF name="Saturation Count_M02_Ch02" type="single" userfeaturetype="Mask and Image" def="Saturation Count|M02|Ch02" />
+    <UDF name="Saturation Count_M03_Ch03" type="single" userfeaturetype="Mask and Image" def="Saturation Count|M03|Ch03" />
+    <UDF name="Saturation Count_M04_Ch04" type="single" userfeaturetype="Mask and Image" def="Saturation Count|M04|Ch04" />
+    <UDF name="Saturation Count_M05_Ch05" type="single" userfeaturetype="Mask and Image" def="Saturation Count|M05|Ch05" />
+    <UDF name="Saturation Count_M06_Ch06" type="single" userfeaturetype="Mask and Image" def="Saturation Count|M06|Ch06" />
+    <UDF name="Saturation Count_M07_Ch07" type="single" userfeaturetype="Mask and Image" def="Saturation Count|M07|Ch07" />
+    <UDF name="Saturation Count_M08_Ch08" type="single" userfeaturetype="Mask and Image" def="Saturation Count|M08|Ch08" />
+    <UDF name="Saturation Count_M09_Ch09" type="single" userfeaturetype="Mask and Image" def="Saturation Count|M09|Ch09" />
+    <UDF name="Saturation Count_M10_Ch10" type="single" userfeaturetype="Mask and Image" def="Saturation Count|M10|Ch10" />
+    <UDF name="Saturation Count_M11_Ch11" type="single" userfeaturetype="Mask and Image" def="Saturation Count|M11|Ch11" />
+    <UDF name="Saturation Count_M12_Ch12" type="single" userfeaturetype="Mask and Image" def="Saturation Count|M12|Ch12" />
+    <UDF name="Saturation Percent_M01_Ch01" type="single" userfeaturetype="Mask and Image" def="Saturation Percent|M01|Ch01" />
+    <UDF name="Saturation Percent_M02_Ch02" type="single" userfeaturetype="Mask and Image" def="Saturation Percent|M02|Ch02" />
+    <UDF name="Saturation Percent_M03_Ch03" type="single" userfeaturetype="Mask and Image" def="Saturation Percent|M03|Ch03" />
+    <UDF name="Saturation Percent_M04_Ch04" type="single" userfeaturetype="Mask and Image" def="Saturation Percent|M04|Ch04" />
+    <UDF name="Saturation Percent_M05_Ch05" type="single" userfeaturetype="Mask and Image" def="Saturation Percent|M05|Ch05" />
+    <UDF name="Saturation Percent_M06_Ch06" type="single" userfeaturetype="Mask and Image" def="Saturation Percent|M06|Ch06" />
+    <UDF name="Saturation Percent_M07_Ch07" type="single" userfeaturetype="Mask and Image" def="Saturation Percent|M07|Ch07" />
+    <UDF name="Saturation Percent_M08_Ch08" type="single" userfeaturetype="Mask and Image" def="Saturation Percent|M08|Ch08" />
+    <UDF name="Saturation Percent_M09_Ch09" type="single" userfeaturetype="Mask and Image" def="Saturation Percent|M09|Ch09" />
+    <UDF name="Saturation Percent_M10_Ch10" type="single" userfeaturetype="Mask and Image" def="Saturation Percent|M10|Ch10" />
+    <UDF name="Saturation Percent_M11_Ch11" type="single" userfeaturetype="Mask and Image" def="Saturation Percent|M11|Ch11" />
+    <UDF name="Saturation Percent_M12_Ch12" type="single" userfeaturetype="Mask and Image" def="Saturation Percent|M12|Ch12" />
+    <UDF name="Bright Detail Intensity R3_MC_Ch01" type="single" userfeaturetype="Mask and Image" def="Bright Detail Intensity R3|MC|Ch01" />
+    <UDF name="Bright Detail Intensity R3_MC_Ch02" type="single" userfeaturetype="Mask and Image" def="Bright Detail Intensity R3|MC|Ch02" />
+    <UDF name="Bright Detail Intensity R3_MC_Ch03" type="single" userfeaturetype="Mask and Image" def="Bright Detail Intensity R3|MC|Ch03" />
+    <UDF name="Bright Detail Intensity R3_MC_Ch04" type="single" userfeaturetype="Mask and Image" def="Bright Detail Intensity R3|MC|Ch04" />
+    <UDF name="Bright Detail Intensity R3_MC_Ch05" type="single" userfeaturetype="Mask and Image" def="Bright Detail Intensity R3|MC|Ch05" />
+    <UDF name="Bright Detail Intensity R3_MC_Ch06" type="single" userfeaturetype="Mask and Image" def="Bright Detail Intensity R3|MC|Ch06" />
+    <UDF name="Bright Detail Intensity R3_MC_Ch07" type="single" userfeaturetype="Mask and Image" def="Bright Detail Intensity R3|MC|Ch07" />
+    <UDF name="Bright Detail Intensity R3_MC_Ch08" type="single" userfeaturetype="Mask and Image" def="Bright Detail Intensity R3|MC|Ch08" />
+    <UDF name="Bright Detail Intensity R3_MC_Ch09" type="single" userfeaturetype="Mask and Image" def="Bright Detail Intensity R3|MC|Ch09" />
+    <UDF name="Bright Detail Intensity R3_MC_Ch10" type="single" userfeaturetype="Mask and Image" def="Bright Detail Intensity R3|MC|Ch10" />
+    <UDF name="Bright Detail Intensity R3_MC_Ch11" type="single" userfeaturetype="Mask and Image" def="Bright Detail Intensity R3|MC|Ch11" />
+    <UDF name="Bright Detail Intensity R3_MC_Ch12" type="single" userfeaturetype="Mask and Image" def="Bright Detail Intensity R3|MC|Ch12" />
+    <UDF name="Time" type="single" userfeaturetype="No Parameters" def="Time" />
+    <UDF name="Object Number" type="single" userfeaturetype="No Parameters" def="Object Number" />
+    <UDF name="Raw Centroid X" type="single" userfeaturetype="No Parameters" def="Raw Centroid X" />
+    <UDF name="Raw Centroid Y" type="single" userfeaturetype="No Parameters" def="Raw Centroid Y" />
+    <UDF name="Flow Speed" type="single" userfeaturetype="No Parameters" def="Flow Speed" />
+    <UDF name="Spot Count_Cell_4" type="single" userfeaturetype="Mask and Scalar" def="Spot Count|Cell|4||True|4|8" />
+    <UDF name="Spot Count_Nucleus_4" type="single" userfeaturetype="Mask and Scalar" def="Spot Count|Nucleus|8||True|4|8" />
+    <UDF name="Delta Centroid XY_Cell_Nucleus" type="single" userfeaturetype="Delta Centroid" def="Delta Centroid XY|Cell|Ch01|false|Nucleus|Ch04|true" />
+    <UDF name="Delta Centroid XY_Cell_Nucleus / Length_M01" type="combined" userfeaturetype="Combined" def="Delta Centroid XY_Cell_Nucleus|/|Length_Cell" />
+    <UDF name="Length_Cell" type="single" userfeaturetype="Mask Only" def="Length|Cell" />
+    <UDF name="Area_Nucleus" type="single" userfeaturetype="Mask Only" def="Area|Nucleus" />
+    <UDF name="Shift X_Cell_Ch01_Ch09" type="single" userfeaturetype="Similarity" def="Shift X|Cell|Ch01|Ch09" />
+    <UDF name="Shift Y_Cell_Ch01_Ch09" type="single" userfeaturetype="Similarity" def="Shift Y|Cell|Ch01|Ch09" />
+  </DefinedFeatures>
+  <Classifiers></Classifiers>
+  <Regions>
+    <Region type="line" label="single_cell" cx="0.588" cy="0.16289592760181" color="Cyan" lightcolor="Teal" ismarker="false" doesnotoverride="false" xlogrange="P" ylogrange="P">
+      <axy x="0.588" y="0.16289592760181" />
+      <axy x="1.338" y="0.16289592760181" />
+    </Region>
+    <Region type="poly" label="target_shape" cx="52.355" cy="0.858" color="Yellow" lightcolor="Gold" ismarker="false" doesnotoverride="false" xlogrange="P" ylogrange="P">
+      <axy x="13.316" y="0.801" />
+      <axy x="27.955" y="0.798" />
+      <axy x="37.714" y="0.777" />
+      <axy x="44.685" y="0.66" />
+      <axy x="50.959" y="0.554" />
+      <axy x="61.415" y="0.451" />
+      <axy x="70.477" y="0.37" />
+      <axy x="81.631" y="0.298" />
+      <axy x="114.394" y="0.243" />
+      <axy x="151.34" y="0.216" />
+      <axy x="152.037" y="0.135" />
+      <axy x="115.788" y="0.129" />
+      <axy x="89.299" y="0.135" />
+      <axy x="58.627" y="0.171" />
+      <axy x="41.869" y="0.263" />
+      <axy x="32.236" y="0.351" />
+      <axy x="24.531" y="0.43" />
+      <axy x="17.175" y="0.537" />
+      <axy x="14.304" y="0.65" />
+    </Region>
+    <Region type="line" label="single_nucleus" cx="0.72" cy="0.072398190045248875" color="DarkOrange" lightcolor="DarkOrange" ismarker="false" doesnotoverride="false" xlogrange="P" ylogrange="P">
+      <axy x="0.72" y="0.072398190045248875" />
+      <axy x="1.408" y="0.072398190045248875" />
+    </Region>
+    <Region type="rect" label="cut" cx="0.153" cy="127.664" color="DeepPink" lightcolor="DeepPink" ismarker="false" doesnotoverride="false" xlogrange="P" ylogrange="P">
+      <axy x="0.2" y="127.664" />
+      <axy x="0.579" y="9.791" />
+    </Region>
+    <Region type="poly" label="focused_nucleus" cx="6.839" cy="4.933" color="CornflowerBlue" lightcolor="CornflowerBlue" ismarker="false" doesnotoverride="false" xlogrange="P" ylogrange="P">
+      <axy x="1.5" y="0" />
+      <axy x="1.5" y="200" />
+      <axy x="87.08" y="200" />
+    </Region>
+    <Region type="poly" label="focused_cells" cx="49.205" cy="117.749" color="LightCoral" lightcolor="IndianRed" ismarker="false" doesnotoverride="false" xlogrange="P" ylogrange="P">
+      <axy x="53.5" y="-1" />
+      <axy x="77" y="-1" />
+      <axy x="77" y="160" />
+      <axy x="50" y="160" />
+      <axy x="50" y="50" />
+      <axy x="53" y="17.554" />
+    </Region>
+  </Regions>
+  <Pops>
+    <Pop name="All" type="B" base="" color="White" lightModeColor="Black" style="Simple Dot" />
+    <Pop name="single_cell" type="G" base="All" color="Cyan" lightModeColor="Teal" style="Simple Dot" region="single_cell" fx="Spot Count_Cell_4" />
+    <Pop name="focused_nucleus &amp; single_cell" type="G" base="single_cell" color="CornflowerBlue" lightModeColor="CornflowerBlue" style="Simple Dot" region="focused_nucleus" fx="Area_Nucleus" fy="Area_Cell" />
+    <Pop name="target_shape &amp; focused_nucleus &amp; single_cell" type="G" base="focused_nucleus &amp; single_cell" color="Yellow" lightModeColor="Gold" style="Simple Dot" region="target_shape" fx="Area_Cell" fy="Aspect Ratio_Cell" />
+    <Pop name="focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell" type="G" base="target_shape &amp; focused_nucleus &amp; single_cell" color="LightCoral" lightModeColor="IndianRed" style="Simple Dot" region="focused_cells" fx="Gradient RMS_M01_Ch01" fy="Contrast_M01_Ch01" />
+    <Pop name="single_nucleus &amp; focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell" type="G" base="focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell" color="DarkOrange" lightModeColor="DarkOrange" style="Simple Dot" region="single_nucleus" fx="Spot Count_Nucleus_4" />
+    <Pop name="cut &amp; single_nucleus &amp; focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell" type="G" base="single_nucleus &amp; focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell" color="DeepPink" lightModeColor="DeepPink" style="Simple Dot" region="cut" fx="Delta Centroid XY_Cell_Nucleus / Length_M01" fy="Area_Cell" />
+  </Pops>
+  <StatisticsReports>
+    <StatisticsReport count="3" title="" classifier="" display_stats="true" />
+    <StatisticsReportColumn name="All" type="value" population="single_nucleus &amp; focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell" feature="" statistics="Count" />
+    <StatisticsReportColumn name="cut" type="value" population="cut &amp; single_nucleus &amp; focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell" feature="" statistics="Count" />
+    <StatisticsReportColumn name="%" type="ratio" population1="cut &amp; single_nucleus &amp; focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell" population2="single_nucleus &amp; focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell" statistics="%Gated" />
+  </StatisticsReports>
+  <PopulationStatistics>
+    <PopStatistic feature="Delta Centroid XY_Cell_Nucleus / Length_M01" population="single_nucleus &amp; focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell" min="0.00086559599371341779" max="0.99517677347984612" mean="0.072266015687003429" geomean="0.060083648039910023" mode="0.0615" stddev="0.043392990815100486" variance="0.0018829516518793952" CV="60.046192394282549" median="0.065354586202299364" MAD="0.037088301764662074" nans="0" count="18340" concentration="15446070.15186731" />
+    <PopStatistic feature="Area_Cell" population="single_nucleus &amp; focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell" min="13.555555555555554" max="89.888888888888872" mean="29.667993456924748" geomean="28.951366786787684" mode="25.2225" stddev="6.6555043239074623" variance="44.295737805550928" CV="22.433280948273953" median="28.777777777777775" MAD="6.9188000000000009" nans="0" count="18340" concentration="15446070.15186731" />
+    <PopStatistic feature="Delta Centroid XY_Cell_Nucleus / Length_M01" population="cut &amp; single_nucleus &amp; focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell" min="0.20014256222281754" max="0.43739914717888911" mean="0.25203401882781296" geomean="0.24820063025231776" mode="0.207" stddev="0.047022438154179044" variance="0.0022111096899635929" CV="18.657179047842856" median="0.23559570917369493" MAD="0.037277533347660145" nans="0" count="257" concentration="216447.11172464004" />
+    <PopStatistic feature="Area_Cell" population="cut &amp; single_nucleus &amp; focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell" min="14.555555555555554" max="61.333333333333329" mean="29.780804150453939" geomean="27.825264941248982" mode="19.467" stddev="11.325575217168257" variance="128.26865399973582" CV="38.029783077552075" median="25.333333333333332" MAD="9.5545333333333353" nans="0" count="257" concentration="216447.11172464004" />
+    <PopStatistic feature="Gradient RMS_M01_Ch01" population="target_shape &amp; focused_nucleus &amp; single_cell" min="31.561277725363691" max="72.261406163271786" mean="55.369821549176393" geomean="55.137593366561909" mode="58.608000000000004" stddev="4.9577886715819517" variance="24.579668512066334" CV="8.9539545782691743" median="56.383660240730627" MAD="4.77343569385697" nans="0" count="32587" concentration="27444988.442688115" />
+    <PopStatistic feature="Contrast_M01_Ch01" population="target_shape &amp; focused_nucleus &amp; single_cell" min="1.3495966440532869" max="46.338928285395269" mean="12.02431687948466" geomean="11.392064092639311" mode="10.027000000000001" stddev="3.9598531937304555" variance="15.680437315897288" CV="32.932042904546009" median="11.384668314186936" MAD="3.7660714683640295" nans="0" count="32587" concentration="27444988.442688115" />
+    <PopStatistic feature="Gradient RMS_M01_Ch01" population="focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell" min="52.215343717042551" max="72.261406163271786" mean="58.084093844948363" geomean="58.022666961585529" mode="58.646" stddev="2.6831762541315678" variance="7.1994348107355117" CV="4.619468216710291" median="58.010940285965319" MAD="2.78082855280909" nans="0" count="22735" concentration="19147568.424356777" />
+    <PopStatistic feature="Contrast_M01_Ch01" population="focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell" min="2.6280595292530329" max="46.338928285395269" mean="12.732489520712079" geomean="12.020756795825962" mode="9.9915" stddev="4.2413162970584137" variance="17.988763931693295" CV="33.310974182692384" median="12.134644963278339" MAD="4.4297519307143478" nans="0" count="22735" concentration="19147568.424356777" />
+    <PopStatistic feature="Spot Count_Cell_4" population="All" min="0" max="3" mean="1.01898" geomean="1.0133903038428775" mode="0.98849999999999993" stddev="0.14078407581519908" variance="0.019820156003139723" CV="13.816176550589715" median="1" MAD="0" nans="0" count="50000" concentration="42110333.020357989" />
+    <PopStatistic feature="Spot Count_Cell_4" population="single_cell" min="1" max="1" mean="1" geomean="1" mode="1" stddev="0" variance="0" CV="0" median="1" MAD="0" nans="0" count="49033" concentration="41295919.179744259" />
+    <PopStatistic feature="Area_Nucleus" population="single_cell" min="0" max="123.88888888888887" mean="12.034414464635121" geomean="9.4953343426296559" mode="4.7785" stddev="10.744505896510805" variance="115.44440696015546" CV="89.281501215411012" median="8.2222222222222214" MAD="5.4361999999999986" nans="0" count="49033" concentration="41295919.179744259" />
+    <PopStatistic feature="Area_Cell" population="single_cell" min="4.1111111111111107" max="149.33333333333331" mean="34.418829042572085" geomean="32.53217747369267" mode="29.142000000000003" stddev="11.842795949198663" variance="140.25181589435627" CV="34.407899044300734" median="32.888888888888886" MAD="10.542933333333337" nans="0" count="49033" concentration="41295919.179744259" />
+    <PopStatistic feature="Area_Nucleus" population="focused_nucleus &amp; single_cell" min="1.6666666666666665" max="45.666666666666664" mean="7.9939319727892633" geomean="7.16245309268015" mode="4.4815" stddev="4.121806908355607" variance="16.989292189768008" CV="51.561696076297928" median="6.8888888888888875" MAD="3.2946666666666653" nans="0" count="36750" concentration="30951094.769963123" />
+    <PopStatistic feature="Area_Cell" population="focused_nucleus &amp; single_cell" min="4.8888888888888884" max="149.33333333333331" mean="35.147241118669612" geomean="33.434631090228827" mode="28.3755" stddev="11.771963611851088" variance="138.57912727874611" CV="33.493279236639779" median="33.444444444444443" MAD="10.542933333333332" nans="0" count="36750" concentration="30951094.769963123" />
+    <PopStatistic feature="Aspect Ratio_Cell" population="focused_nucleus &amp; single_cell" min="0.15102995146597217" max="1" mean="0.4964222639904492" geomean="0.47618195666333096" mode="0.3655" stddev="0.14980776803104867" variance="0.022442367362444489" CV="30.177487775594784" median="0.467827695825183" MAD="0.13503908877309953" nans="0" count="36750" concentration="30951094.769963123" />
+    <PopStatistic feature="Area_Cell" population="target_shape &amp; focused_nucleus &amp; single_cell" min="13.555555555555554" max="120.1111111111111" mean="34.405765080144427" geomean="33.136798456938791" mode="29.113" stddev="9.69246456402806" variance="93.943869324939641" CV="28.171047908542462" median="33.222222222222214" MAD="9.8840000000000057" nans="0" count="32587" concentration="27444988.442688115" />
+    <PopStatistic feature="Aspect Ratio_Cell" population="target_shape &amp; focused_nucleus &amp; single_cell" min="0.15102995146597217" max="0.79963713578109663" mean="0.46861249355349477" geomean="0.4551028648127099" mode="0.3645" stddev="0.11487885177909436" variance="0.013197150586083131" CV="24.514679689388242" median="0.45387532183157808" MAD="0.1193148467434956" nans="0" count="32587" concentration="27444988.442688115" />
+    <PopStatistic feature="Spot Count_Nucleus_4" population="focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell" min="1" max="4" mean="1.1964811963932263" geomean="1.1448150040362932" mode="1.0164999999999997" stddev="0.40599658025309743" variance="0.16483322317720978" CV="33.932550003875342" median="1" MAD="0" nans="0" count="22735" concentration="19147568.424356777" />
+    <PopStatistic feature="Spot Count_Nucleus_4" population="single_nucleus &amp; focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell" min="1" max="1" mean="1" geomean="1" mode="1" stddev="0" variance="0" CV="0" median="1" MAD="0" nans="0" count="18340" concentration="15446070.15186731" />
+  </PopulationStatistics>
+  <Displays count="6" layout="1" entriesPerRow="12" lightDarkMode="1">
+    <Graph type="scatter" xlocation="720" ylocation="320" f1="Delta Centroid XY_Cell_Nucleus / Length_M01" f2="Area_Cell" scaletype="0" xmin="-0.098565521754899868" xmax="1.0946078912284594" ymin="-1.9963000000000015" ymax="139.4513" title="single_nucleus " xlabel="Delta Centroid XY_Cell_Nucleus / Length_M01" ylabel="Area_Cell" axislabelsfontsize="10" axistickmarklabelsfontsize="10" graphtitlefontsize="12" regionlabelsfontsize="10" bincount="0" freq="T" histogramsmoothingfactor="0" xlogrange="P" ylogrange="P" stats="true" xsize="560" ysize="440" splitterdistance="120" xstats="Count|%Gated" ystats="Count|%Gated" order="cut &amp; single_nucleus &amp; focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell|single_nucleus &amp; focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell" xstatsorder="single_nucleus &amp; focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell|cut &amp; single_nucleus &amp; focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell">
+      <Legend onoff="false" x="0" y="0" width="96" height="64" />
+      <BasePop name="single_nucleus &amp; focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell" linestyle="Solid" fill="true" />
+      <GraphRegion name="cut" />
+    </Graph>
+    <Graph type="density" xlocation="0" ylocation="320" f1="Gradient RMS_M01_Ch01" f2="Contrast_M01_Ch01" scaletype="0" xmin="27.017405497900061" xmax="81.543872227463623" ymin="-17.1" ymax="176.1" title="target" xlabel="Gradient RMS_M01_Ch01" ylabel="Contrast_M01_Ch01" axislabelsfontsize="10" axistickmarklabelsfontsize="10" graphtitlefontsize="12" regionlabelsfontsize="10" bincount="0" freq="T" histogramsmoothingfactor="0" xlogrange="P" ylogrange="P" stats="true" xsize="400" ysize="440" splitterdistance="120" xstats="Count|%Gated" ystats="Count|%Gated" order="target_shape &amp; focused_nucleus &amp; single_cell|target_shape &amp; focused_nucleus &amp; single_cell|target_shape &amp; focused_nucleus &amp; single_cell|target_shape &amp; focused_nucleus &amp; single_cell|target_shape &amp; focused_nucleus &amp; single_cell" xstatsorder="target_shape &amp; focused_nucleus &amp; single_cell|focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell">
+      <Legend onoff="false" x="0" y="0" width="96" height="160" />
+      <BasePop name="target_shape &amp; focused_nucleus &amp; single_cell" linestyle="Solid" fill="true" densitybincount="128" densitymin="0" densitymax="0" densitycolors="-16776961|-13447886|-256|-23296|-65536|" densitycolorslightmode="-16776961|-13447886|-256|-23296|-65536|" densitycolorsdarkmode="-16776961|-13447886|-256|-23296|-65536|" />
+      <GraphRegion name="focused_cells" />
+    </Graph>
+    <Graph type="histogram" xlocation="0" ylocation="0" f1="Spot Count_Cell_4" scaletype="1" xmin="-0.4" xmax="4.4" ymin="0" ymax="104.38359106529209" title="All" xlabel="Spot Count_Cell_4" ylabel="Normalized Frequency" axislabelsfontsize="10" axistickmarklabelsfontsize="10" graphtitlefontsize="12" regionlabelsfontsize="10" bincount="0" freq="T" histogramsmoothingfactor="0" xlogrange="P" ylogrange="P" stats="false" xsize="320" ysize="320" splitterdistance="120" xstats="Count|%Gated" ystats="Count|%Gated" order="All" xstatsorder="All|single_cell">
+      <Legend onoff="false" x="0" y="0" width="96" height="32" />
+      <BasePop name="All" linestyle="Solid" fill="true" />
+      <GraphRegion name="single_cell" />
+    </Graph>
+    <Graph type="density" xlocation="320" ylocation="0" f1="Area_Nucleus" f2="Area_Cell" scaletype="0" xmin="-12.388888888888888" xmax="136.27777777777777" ymin="-20" ymax="220" title="single_cell" xlabel="Area_Nucleus" ylabel="Area_Cell" axislabelsfontsize="10" axistickmarklabelsfontsize="10" graphtitlefontsize="12" regionlabelsfontsize="10" bincount="0" freq="T" histogramsmoothingfactor="0" xlogrange="P" ylogrange="P" stats="false" xsize="360" ysize="320" splitterdistance="120" xstats="Count|%Gated" ystats="Count|%Gated" order="single_cell|single_cell|single_cell|single_cell|single_cell" xstatsorder="single_cell|focused_nucleus &amp; single_cell">
+      <Legend onoff="false" x="0" y="0" width="96" height="160" />
+      <BasePop name="single_cell" linestyle="Solid" fill="true" densitybincount="128" densitymin="0" densitymax="0" densitycolors="-16776961|-13447886|-256|-23296|-65536|" densitycolorslightmode="-16776961|-13447886|-256|-23296|-65536|" densitycolorsdarkmode="-16776961|-13447886|-256|-23296|-65536|" />
+      <GraphRegion name="focused_nucleus" />
+    </Graph>
+    <Graph type="density" xlocation="680" ylocation="0" f1="Area_Cell" f2="Aspect Ratio_Cell" scaletype="1" xmin="-11.53" xmax="176.2" ymin="0.06787" ymax="1.085" title="focused_nucleus " xlabel="Area_Cell" ylabel="Aspect Ratio_Cell" axislabelsfontsize="10" axistickmarklabelsfontsize="10" graphtitlefontsize="12" regionlabelsfontsize="10" bincount="0" freq="T" histogramsmoothingfactor="0" xlogrange="P" ylogrange="P" stats="false" xsize="360" ysize="320" splitterdistance="120" xstats="Count|%Gated" ystats="Count|%Gated" order="focused_nucleus &amp; single_cell|focused_nucleus &amp; single_cell|focused_nucleus &amp; single_cell|focused_nucleus &amp; single_cell|focused_nucleus &amp; single_cell" xstatsorder="focused_nucleus &amp; single_cell|target_shape &amp; focused_nucleus &amp; single_cell">
+      <Legend onoff="false" x="0" y="0" width="96" height="160" />
+      <BasePop name="focused_nucleus &amp; single_cell" linestyle="Solid" fill="true" densitybincount="128" densitymin="0" densitymax="0" densitycolors="-16776961|-13447886|-256|-23296|-65536|" densitycolorslightmode="-16776961|-13447886|-256|-23296|-65536|" densitycolorsdarkmode="-16776961|-13447886|-256|-23296|-65536|" />
+      <GraphRegion name="target_shape" />
+    </Graph>
+    <Graph type="histogram" xlocation="400" ylocation="320" f1="Spot Count_Nucleus_4" scaletype="1" xmin="0.7" xmax="4.3" ymin="0" ymax="65.447795518759449" title="focused_cells " xlabel="Spot Count_Nucleus_4" ylabel="Normalized Frequency" axislabelsfontsize="10" axistickmarklabelsfontsize="10" graphtitlefontsize="12" regionlabelsfontsize="10" bincount="0" freq="T" histogramsmoothingfactor="0" xlogrange="P" ylogrange="P" stats="true" xsize="320" ysize="440" splitterdistance="120" xstats="Count|%Gated" ystats="Count|%Gated" order="focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell" xstatsorder="focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell|single_nucleus &amp; focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell">
+      <Legend onoff="false" x="0" y="0" width="96" height="32" />
+      <BasePop name="focused_cells &amp; target_shape &amp; focused_nucleus &amp; single_cell" linestyle="Solid" fill="true" />
+      <GraphRegion name="single_nucleus" />
+    </Graph>
+  </Displays>
+</AssayTemplate>
